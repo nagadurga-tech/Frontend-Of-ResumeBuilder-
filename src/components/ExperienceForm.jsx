@@ -57,7 +57,7 @@ const ExperienceForm = ({data,onChange}) => {
       )
 
       updateExperience(index, 'description', res.data.enhancedContent)
-        }catch{
+        }catch(error){
             toast.error(error.message)
         }finally{
             setGeneratingIndex(-1)
