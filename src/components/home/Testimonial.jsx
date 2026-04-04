@@ -28,6 +28,7 @@ const Testimonial = () => {
     ];
 
      const CreateCard = ({ card }) => (
+        <section id="testimonials">    
         <div className="p-4 rounded-lg mx-4 shadow hover:shadow-lg transition-all duration-200 w-72 shrink-0">
             <div className="flex gap-2">
                 <img className="size-11 rounded-full" src={card.image} alt="User Image" />
@@ -43,6 +44,8 @@ const Testimonial = () => {
             </div>
             <p className="text-sm py-4 text-gray-800">Radiant made undercutting all of our competitors an absolute breeze.</p>
         </div>
+        </section> 
+
     );
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const hero = () => {
+const Hero = () => {
 
     const{user}=useSelector(state=>state.auth);
     const [menuOpen, setMenuOpen] = React.useState(false);
@@ -18,11 +18,11 @@ const hero = () => {
   return (
     
     <>
-            <div className="min-h-screen pb-20">
+            <div className="min-h-[70vh] md:min-h-[75vh] lg:min-h-[80vh] pb-6 md:pb-8">
                 {/* Navbar */}
                 <nav className="z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-40 text-sm">
                     
-                        <img src="/logo1.png" alt="logo" className="h-11 w-auto"/>
+                        <img src="/logo.png" alt="logo" className="h-13 w-auto"/>
                     
 
                     <div className="hidden md:flex items-center gap-8 transition duration-500 text-slate-800">
@@ -33,18 +33,23 @@ const hero = () => {
                     </div>
 
                     <div className="flex gap-2">
-                        <Link to='/app?state=register' className="hidden md:block px-6 py-2 bg-bule-500 hover:bg-bule-700 active:scale-95 transition-all rounded-full text-white"
-                            hidden={user}>
-                            Get started
-                        </Link>
-                        <Link to='/app?state=login' className="hidden md:block px-6 py-2 border active:scale-95 hover:bg-blue-400 hover:text-white transition-all rounded-full text-slate-700 hover:text-slate-900"
-                            hidden={user} >
-                            Login
-                        </Link>
-                        <Link to='/app' className="hidden md:block px-6 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white"
-                        hidden={!user}>
-                            Dashboard   
-                        </Link>
+                        {!user && (
+                    <Link to='/app?state=register' className="hidden md:block px-6 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white">
+                    Get started
+                    </Link>
+                    )}
+
+                    {!user && (
+                    <Link to='/app?state=login' className="hidden md:block px-6 py-2 border active:scale-95 hover:bg-blue-400 hover:text-white transition-all rounded-full text-slate-700">
+                    Login
+                    </Link>
+                    )}
+
+                    {user && (
+                    <Link to='/app' className="hidden md:block px-6 py-2 bg-blue-500 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white">
+                    Dashboard
+                    </Link>
+                    )}
                     </div>
 
                     <button onClick={() => setMenuOpen(true)} className="md:hidden active:scale-90 transition" >
@@ -56,10 +61,10 @@ const hero = () => {
 
                 {/* Mobile Menu */}
                 <div className={`fixed inset-0 z-[100] bg-black/40 text-black backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-300 ${menuOpen ? "translate-x-0" : "-translate-x-full"}`} >
-                    <a href="/" className="text-white">Home</a>
-                    <a href="/features" className="text-white">Features</a>
-                    <a href="/testimonials" className="text-white">Testimonials</a>
-                    <a href="/contact" className="text-white">Contact</a>
+                    <Link to="#" className="text-white">Home</Link>
+                    <Link to="#features" className="text-white">Features</Link>
+                    <Link to="#testimonials" className="text-white">Testimonials</Link>
+                    <Link to="#cta" className="text-white">Contact</Link>
                     <button onClick={() => setMenuOpen(false)} className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-green-600 hover:bg-green-700 transition text-white rounded-md flex" >
                         X
                     </button>
@@ -92,13 +97,29 @@ const hero = () => {
                     <p className="text-center text-sm md:text-base text-gray-500 font-medium mt-16 mb-6">
                         Trusted by leading brands worldwide</p>
 
-                    <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 max-w-4xl mx-auto py-6"
-                    id="logo-container">
-                    {logos.map((logo, index) => (
-                     <img key={index} src={logo} alt="brand logo"
-                    className="h-7 md:h-8 w-auto grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100 hover:scale-105"
-                    /> ))}
-                </div>
+                    <div
+  className="
+    flex flex-wrap items-center justify-center
+    gap-4 sm:gap-6 md:gap-x-10 md:gap-y-6 
+    max-w-5xl mx-auto py-6 md:py-10
+    px-4
+  "
+  id="logo-container"
+>
+  {logos.map((logo, index) => (
+    <img
+      key={index}
+      src={logo}
+      alt="brand logo"
+      className="
+        h-6 sm:h-7 md:h-8 lg:h-10 
+        w-auto
+        transition-transform duration-300
+        hover:scale-110
+      "
+    />
+  ))}
+</div>
 
                 </div>
             </div>
@@ -119,4 +140,4 @@ const hero = () => {
   )
 }
 
-export default hero
+export default Hero;

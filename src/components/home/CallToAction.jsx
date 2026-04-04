@@ -8,27 +8,36 @@ const CallToAction = () => {
   return (
     <div
       id="cta"
-      className="w-full max-w-5xl mx-auto px-6 sm:px-16 mt-28
-      border-y border-dashed border-slate-200"
+      className="
+        w-full max-w-5xl mx-auto px-5 sm:px-10 
+        mt-12 sm:mt-16 
+        border-y border-dashed border-slate-200
+      "
     >
       <div
-        className="flex flex-col md:flex-row text-center md:text-left
-        items-center justify-between gap-8
-        px-4 md:px-10 py-16 sm:py-20
-        border-x border-dashed border-slate-200
-        -mt-10 -mb-10"
+        className="
+          flex flex-col md:flex-row items-center justify-between 
+          text-center md:text-left
+          gap-6 sm:gap-8
+          px-4 sm:px-8 md:px-10
+          py-10 md:py-12
+          border-x border-dashed border-slate-200
+        "
       >
-        <p className="text-xl sm:text-2xl font-medium max-w-md text-slate-800">
+        <p className="text-lg sm:text-xl md:text-2xl font-medium max-w-md text-slate-800">
           Build a professional resume that helps you stand out and get hired
         </p>
 
-        {/* Show only when NOT logged in */}
         {!user?.id && (
           <Link
             to="/app?state=register"
-            className="flex items-center gap-2 rounded-full
-            py-3 px-8 bg-blue-600 hover:bg-blue-700
-            transition text-white font-medium shadow-md"
+            className="
+              flex items-center gap-2 rounded-full
+              py-2.5 px-7 
+              bg-blue-600 hover:bg-blue-700 
+              transition text-white font-medium
+              shadow-md
+            "
           >
             <span>Get Started</span>
             <svg

@@ -94,7 +94,7 @@ const Login = () => {
           />
         </div>
 
-        <div className="mt-4 text-left text-green-500">
+        <div className="mt-4 text-left text-blue-500">
           <button type="reset" className="text-sm">
             Forgot password?
           </button>
