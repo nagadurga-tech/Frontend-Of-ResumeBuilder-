@@ -14,7 +14,7 @@ const Dashboard = () => {
   const colors = ['#9333ea', '#d97706', '#dc2626', '#0284c7', '#16a34a'];
   const [showCreateResumes, setShowCreateResumes] = useState(false);
   const [allResumes, setAllResumes] = useState([]);
-  const [showUploadResume, setShowUploadResumes] = useState(false);
+  const [showUploadResumes, setShowUploadResumes] = useState(false);
   const [title, setTitle] = useState('');
   const [resume, setResume] = useState(null);
   const [editResumeId, setEditResumeId] = useState('');
@@ -263,9 +263,9 @@ const Dashboard = () => {
         )}
 
         {/* Upload Resume Modal */}
-        {showUploadResume && (
+        {showUploadResumes && (
           <div
-            onClick={() => setShowUploadResumes(false)}
+            onClick={() => setShowUploadResumes(true)}
             className="fixed inset-0 bg-black/70 backdrop-blur z-10 flex items-center justify-center px-4"
           >
             <form

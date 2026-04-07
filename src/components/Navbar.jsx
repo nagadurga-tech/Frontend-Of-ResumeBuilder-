@@ -19,7 +19,7 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between">
 
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="logo" className="h-8 w-auto" />
+          <img src="/logo.png" alt="logo" className="h-10 w-auto" />
         </Link>
         <div className="flex items-center gap-3 sm:gap-5">
           <div className="hidden sm:flex items-center gap-2 text-sm text-gray-600">

@@ -74,7 +74,7 @@ const Login = () => {
             name="email"
             type="email"
             placeholder="Email"
-            className="w-full border-none outline-none"
+            className="border-none outline-none ring-0 w-full"
             value={formData.email}
             onChange={handleChange}
             required
@@ -87,7 +87,7 @@ const Login = () => {
             type="password"
             name="password"
             placeholder="Password"
-            className="w-full border-none outline-none"
+            className="border-none outline-none ring-0 w-full"
             value={formData.password}
             onChange={handleChange}
             required

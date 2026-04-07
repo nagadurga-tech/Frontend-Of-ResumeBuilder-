@@ -233,12 +233,12 @@ const ResumeBuilder = () => {
                           <Share2Icon className="size-4"/>Share
                         </button>
                       )}
-                      <button onClick={changeResumeVisibility} className="flex items-center p-2 px-4 gap-2 text-xs bg-gradient-to-br form-blue-100 to-blue-200 text-blue-600 rounded-lg ring-blue-300 hover:ring transition-colors">
+                      <button onClick={changeResumeVisibility} className="flex items-center p-2 px-4 gap-2 text-xs bg-gradient-to-br form-blue-100 to-blue-200 text-blue-600 rounded-lg  ring-blue-300 hover:ring transition-colors">
                         {resumeData.public ? <EyeIcon className="size-4"/>:
                         <EyeOffIcon className="size-4"/>}
                         {resumeData.public ? 'Public':'Private'}
                       </button>
-                      <button onClick={downloadResume} className='flex items-center p-2 px-4 gap-2 text-xs bg-gradient-to-br form-blue-100 to-blue-200 text-blue-600 rounded;lg ring-blue-300 hover-ring transition-colos'>
+                      <button onClick={downloadResume} className='flex items-center px-4 py-2 gap-2 text-sm bg-gradient-to-br form-blue-100 to-blue-200 text-blue-600 rounded-lg  ring-blue-300 hover-ring-2 transition-colors'>
                           <DownloadIcon className="size-4"/>Download
                       </button>
                     </div>
